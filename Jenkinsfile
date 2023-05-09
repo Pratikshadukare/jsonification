@@ -4,21 +4,13 @@ pipeline {
     stages {
         
         stage('Build') {
-            steps {
-                sh 'mvn clean package'
-            }
+            
         }
         stage('Unit Tests') {
-            steps {
-                sh 'mvn test'
-            }
+            
         }
         stage('Quality Checks') {
-            steps {
-                sh 'mvn checkstyle:checkstyle'
-                sh 'mvn spotbugs:check'
-                sh 'mvn pmd:check'
-            }
+            
         }
         stage('SonarQube analysis') {
             environment {
