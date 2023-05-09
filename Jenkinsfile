@@ -2,15 +2,20 @@ pipeline {
     agent any
 
     stages {
-        
         stage('Build') {
-            
+            steps {
+                sh 'mvn clean package'
+            }
         }
         stage('Unit Tests') {
-            
+            steps {
+                sh 'mvn test'
+            }
         }
         stage('Quality Checks') {
-            
+            steps {
+                sh 'mvn checkstyle:check pmd:pmd findbugs:findbugs'
+            }
         }
         stage('SonarQube analysis') {
             environment {
