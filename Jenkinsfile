@@ -2,11 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone the Git') {
-            steps {
-                git 'https://github.com/Pratikshadukare/jsonification.git'
-            }
-        }
+        
         stage('Build') {
             steps {
                 sh 'mvn clean package'
