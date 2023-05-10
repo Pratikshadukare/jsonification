@@ -9,7 +9,7 @@ pipeline {
         withSonarQubeEnv('SonarQube') {
           sh "${SCANNER_HOME}/bin/sonar-scanner \
             -D sonar.projectKey=javaPipeline \
-            -D sonar.projectName=Unreal-Engine-Project1"
+            -D sonar.projectName=pipeline"
         }
       }
     }
