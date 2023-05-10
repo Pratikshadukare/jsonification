@@ -8,9 +8,9 @@ pipeline {
       steps {
         withSonarQubeEnv('SonarQube') {
           sh "${SCANNER_HOME}/bin/sonar-scanner \
-            -D sonar.projectKey=javaPipeline \
-            -D sonar.projectName=pipeline \
-            -D sonar.java.binaries=target"
+            -Dsonar.exclusions=**/*.java \
+            -Dsonar.projectKey=javaPipeline \
+            -Dsonar.projectName=Unreal-Engine-pro2"
         }
       }
     }
