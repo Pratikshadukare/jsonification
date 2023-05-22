@@ -14,5 +14,16 @@ pipeline {
         }
       }
     }
+    stage('Quality Gate') {
+      steps {
+        // Run the quality gate analysis and check
+        script {
+          def qualityGate = waitForQualityGate()
+          if (qualityGate.status != 'OK') {
+            error("Quality Gate failed! Check the code quality.")
+          }
+        }
+      }
+    }
   }
 }
