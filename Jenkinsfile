@@ -51,7 +51,7 @@ pipeline {
 
         // Deploy the Docker container
         // Replace the container name, ports, and other options as needed
-        sh 'docker run -d --name your-container-name -p 8080:8080 your-image-name'
+        sh 'docker run -d --name your-container-name -p 8000:8000 your-image-name'
       }
     }
   }
